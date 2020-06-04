@@ -12,10 +12,25 @@ function Quejas() {
     message: '',
   });
 
+  const [errorMessage, setErrorMessage] = useState('');
   const refForm = useRef();
+
+  const validateForm = () => {
+    const { name, telefono, email, message } = formData;
+    if (!name || !telefono || !email || !message) {
+      setErrorMessage('Todos los campos son obligatorios.');
+      return false;
+    }
+    setErrorMessage('');
+    return true;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(refForm.current);
+    if (!validateForm()) {
+      return;
+    }
+
     const serviceId = "service_2bhfjvw";
     const templateId = "template_gtt5crh";
     const apikey = "zOIh-canj4-nKN97X";
@@ -47,11 +62,11 @@ function Quejas() {
       <div className="containerSuge">
         <div className="textoPrincipal">
           <h3>SUGERENCIAS</h3>
-          <p>Para nosotros es fundamental poder contar con su opinion, para asi mejorar y prosperar para un buena comunicacion y servicio.</p>
+          <p>Para nosotros es fundamental poder contar con su opinión, para así mejorar y prosperar para una buena comunicación y servicio.</p>
         </div>
         <div className="text">
-          <h3 >nuestros medios de contacto</h3>
-          <p >Utiliza las siguientes vías de contacto, o rellena el formulario.</p>
+          <h3>nuestros medios de contacto</h3>
+          <p>Utiliza las siguientes vías de contacto, o rellena el formulario.</p>
           <ul className="lista">
             <label htmlFor="l1">via E-mail</label>
             <li><a href="mailto:transportesoclocksas@gmail.com">Via Email: transportesoclocksas@gmail.com</a></li>
@@ -62,19 +77,37 @@ function Quejas() {
           </ul>
         </div>
         <form ref={refForm} className="formSuge" onSubmit={handleSubmit}>
-          <label for="name">nombre</label>
-          <input type="text" name="name" id="id" placeholder="Nombre" className="box" />
-          <label for="telefono">telefono</label>
-          <input 
+          <label htmlFor="name">nombre</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nombre"
+            className="box"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <label htmlFor="telefono">telefono</label>
+          <input
             type="tel"
             name="telefono"
             id="telefono"
             placeholder="Telefono"
             className="box"
+            value={formData.telefono}
+            onChange={handleChange}
           />
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="Email" className="box" />
-          <label for="message">Queja o sugerencias</label>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            className="box"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <label htmlFor="message">Queja o sugerencias</label>
           <textarea
             name="message"
             id="message"
@@ -82,13 +115,16 @@ function Quejas() {
             rows="5"
             placeholder="Mensaje"
             className="box"
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
+          {errorMessage && <p className="error">{errorMessage}</p>}
           <input className="submitSuge" type="submit" value="Enviar" />
         </form>
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
-export default Quejas
+export default Quejas;

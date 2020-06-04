@@ -4,7 +4,7 @@ export const conductores =[
         nombre: "Juan Carlos González",
         placa : "TZX-123",
         numero:  "(312)-345-6789",
-        urlImagen:"",
+        urlImagen:"./assets/Juan.jpg",
         cantidad: 1,
     },
     {

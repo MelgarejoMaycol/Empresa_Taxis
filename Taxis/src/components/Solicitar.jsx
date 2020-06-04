@@ -287,8 +287,6 @@ const Solicitar = () => {
                 className="SolicitarContenedorPantalla"
                 contentLabel="Documento HTML"
             >
-                {/* <div className="d-flex"> */}
-                {/* <div className="w-50"> */}
                 <h2 className="tituloPaginas">Confirmar Viaje</h2>
                 <div w-100>
                     <div className="d-flex solicitarImagenEncuesta m-3">

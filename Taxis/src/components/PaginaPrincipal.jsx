@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Encabezado from "./Encabezado";
+import Solicitar from "./Solicitar";
+
 import { motion } from 'framer-motion';
 import Footer from "./Footer";
-
+import '../../src/estilos/stylesEsenciales.css';
+import '../../src/estilos/styles.css';
 const PaginaPrincipal = () => {
   return (
     <div>
@@ -27,9 +30,11 @@ const PaginaPrincipal = () => {
         </div>
       </div>
       <Footer />
+      <Solicitar/>
     </div>
   )
 };
+
 
 const AnimatedImagen = ({ src }) => {
   const [animate, setAnimate] = useState(true);

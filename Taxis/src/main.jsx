@@ -13,6 +13,7 @@ import AcercaDe from './components/AcercaDe.jsx';
 import Ayuda from './components/Ayuda.jsx';
 import Sugerencias from './components/Sugerencias.jsx';
 import { UserProvider } from './context/UserContext.jsx';
+import { AppConductores } from './components/AppConductores.jsx';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,13 @@ const router = createBrowserRouter([
     element: 
     <div>
       <Sugerencias/>
+    </div>,
+  },
+  {
+    path: "/Conductores",
+    element: 
+    <div>
+      <AppConductores/>
     </div>,
   },
 ]);

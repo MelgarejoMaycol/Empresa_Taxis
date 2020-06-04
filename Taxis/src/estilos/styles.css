@@ -317,8 +317,6 @@ body {
 /*LOGO*/
 .tituloLogo{
   width: 100%;
-  /* padding-left: 9rem;
-  padding-top: 4rem;  */
   font-size: 25px;
 }
 
@@ -327,7 +325,7 @@ body {
   width: 100%;
   text-align: end;
   font-size: 25px;
-  padding-right: 2rem;
+  padding-right: 7rem;
 } 
 
 .logoSuntitulo{
@@ -338,7 +336,8 @@ body {
   display: flex;
   width: 80%;
   padding-top: 0;
-  padding-left:4rem;
+   padding-left:5rem; 
+   margin-left: 5rem;
 }
 .logoEmpresa{
   position: relative;

@@ -101,13 +101,11 @@ const AcercaDe = () => {
         </div>
         <div className="subtitulos AcercaDeApartadoTexto ">
           <p className='logoSuntitulo'>
-          El logo de Transportes O'clock S.A.S. fue creado para encapsular los valores fundamentales 
-          de la empresa: puntualidad, confiabilidad y excelencia. La inclusión de un coche estilizado 
-          dentro de una esfera de reloj subraya la precisión con la que operamos, mientras que la estrella
-           brillante en la cima representa nuestra aspiración constante de superar las expectativas y brindar
-            un servicio estelar. Los colores degradados en el arco no solo añaden un atractivo visual moderno, 
-            sino que también simbolizan el dinamismo y la evolución constante de nuestra empresa en el sector del
-           transporte.
+          El logo de "Transportes O'Clock S.A.S" presenta un diseño dinámico y moderno. 
+          En el centro, se encuentra un dibujo estilizado de un automóvil deportivo en color negro, 
+          que sugiere velocidad y eficiencia. Debajo del auto, el nombre de la empresa "TRANSPORTES O'CLOCK S.A.S" está escrito en letras mayúsculas,
+          con "TRANSPORTES" en una fuente más fina y "O'CLOCK" en una fuente más gruesa y angular, dando una
+          sensación de solidez y profesionalismo.
           </p>
           <div className='mt-5 mb-5'>
             <a href="#" onClick={openLogo} className='BotonLeerMas BotonGeneral'>Leer Más</a>
@@ -134,7 +132,16 @@ const AcercaDe = () => {
               <div className='tituloPaginas Logo'>MAS SOBRE EL LOGO</div>
               <div className='subtitulos MasSobreLogo'>
                 <p className='logo'>
-                  PRUEBA UNO
+                  El logo de "Transportes O'Clock S.A.S" utiliza una combinación de colores vibrantes y contrastantes:
+Púrpura: El trazo curvo que forma una media luna a la izquierda del logo comienza en un tono púrpura oscuro. Este color evoca sensaciones de lujo, creatividad y misterio.
+
+Degradado hacia rosa: A medida que el trazo avanza hacia la parte superior derecha del logo, el púrpura se degrada suavemente hacia un tono rosado. Este cambio de color añade dinamismo y frescura al diseño.
+
+Estrella brillante: La estrella en la esquina superior derecha es de color naranja brillante en su exterior, con un interior que combina tonos de rosa, púrpura y detalles brillantes o glitter. Este elemento resalta fuertemente debido a sus colores llamativos y su diseño brillante, simbolizando éxito y destacando la marca.
+
+Negro: El automóvil y las letras "TRANSPORTES O'CLOCK S.A.S" están en color negro, lo que aporta un contraste fuerte y una sensación de elegancia, formalidad y profesionalismo.
+
+En conjunto, estos colores crean una imagen moderna, enérgica y profesional, llamando la atención y sugiriendo eficiencia y dinamismo en los servicios de la empresa.
                 </p>
               </div>
 
