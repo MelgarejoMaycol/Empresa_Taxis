@@ -1,0 +1,178 @@
+:root {
+  --ColorPrincipal: #FF914D;
+}
+
+/*TITULO DE LA EMPRESA COMO LOGO*/
+h1 {
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* margin-left: 100px; */
+  /* margin-left: px;
+      width: px; */
+  font-size: 150%;
+  color: rgb(0, 0, 0);
+  margin-top: 1.4rem;
+  margin-left: 2rem;
+}
+
+/*Encabezado que debe llevar todas las paginas*/
+
+.Encabezado {
+  background: #fceabb;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fceabb, #f8b500);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fceabb, #fceabb, #f8b500);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.EncabezadoImagenPrincipal {
+  width: 90px;
+  margin-left: 100px;
+  /* margin-block-start: auto; */
+}
+
+.EncabezadoParte {
+  width: 30%;
+  /* background-color: aquamarine; */
+}
+
+.EncabezadoLogo {
+  display: flex;
+}
+
+.EncabezadoLinks {
+
+  margin-top: 2.5rem;
+  margin-left: 5rem;
+  width: 40%;
+  justify-content: space-between;
+
+}
+
+.EncabezadoLinks a {
+
+  text-decoration: none;
+
+  /* margin: 0 auto; */
+  margin-right: 48px;
+}
+
+.EncabezadoLinks a:active,
+.EncabezadoLinks a:focus,
+.EncabezadoLinks a:hover {
+  color: rgb(255, 111, 44);
+  /* Color del texto cuando se hace clic o se enfoca */
+  text-decoration: underline;
+  /* Añade subrayado cuando se hace clic o se enfoca */
+  outline: none;
+  /* Elimina el borde por defecto del enfoque */
+}
+
+.nav-link.active {
+  color: rgb(255, 162, 0);
+  text-decoration: underline;
+}
+
+.EncabezadoRegistro {
+  margin-top: 2.5rem;
+}
+
+.EncabezadoRegistro a {
+  color: #ffefeff3;
+  text-decoration: none;
+}
+
+.EncabezadoRegistro a:active,
+.EncabezadoRegistro a:focus,
+.EncabezadoRegistro a:hover {
+  color: rgb(0, 0, 0);
+  /* Color del texto cuando se hace clic o se enfoca */
+  text-decoration: none;
+  /* Añade subrayado cuando se hace clic o se enfoca */
+  outline: none;
+  /* Elimina el borde por defecto del enfoque */
+}
+
+.EncabezadoBotonRegistrarme {
+  margin-left: 2rem;
+  color: white !important;
+}
+
+.EncabezadoNombreUsuario{
+  font-family: "Russo One", sans-serif !important;
+  font-size: 1.3rem;;
+}
+
+.active {
+  font-weight: bold;
+  color: var(--ColorPrincipal) !important;
+  text-decoration: underline;
+}
+
+.EncabezadoNombreUsuario:hover{
+  color: white !important;
+}
+
+/*Subtitulos para todas las paginas*/
+.subtitulos {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+}
+
+.subtitulos p {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+}
+
+.subtitulos a {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+}
+
+/*Titulos para todas las paginas*/
+.tituloPaginas {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*Boton para todas */
+.BotonGeneral {
+  background-color: #fa5902f3;
+  border-radius: 3rem;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white; 
+}
+
+.BotonGeneral:hover {
+  color: rgb(0, 0, 0) !important;
+  background-color: rgb(255, 255, 255);
+}
+
+.Input:hover {
+  background-color: #f8f9fa;
+}
+
+.Input {
+  border: none;
+  border-radius: 2rem;
+  background-color: rgb(236, 236, 236);
+}

@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* body {
+    background-color: rgba(241, 241, 136);
+  } */
+  
+  .containerSuge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(241, 241, 136); */
+    justify-content: space-between;
+    height: 100%;
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 20px;
+    padding-top: 70px;
+  }
+  
+  .textoPrincipal {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .textoPrincipal h3 {
+    font-size: 35px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .textoPrincipal p {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 25px;
+  }
+  
+  .text {
+    color: black;
+    width: 100%; /* Full width within the container */
+    text-align: left; /* Align text to the left */
+    padding: 30px 40px; /* Adjust the padding as necessary */
+    margin-left: -150px;
+  }
+  
+  .text h3 {
+    color: black;
+    font-size: 35px; /* Ajusta el tamaño de fuente */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    
+  }
+  
+  .text p {
+    color: black;
+    font-size: 18px; /* Ajusta el tamaño de fuente */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+  }
+  
+  .lista {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding-left: 0; /* Quita el padding izquierdo de la lista */
+  }
+  
+  .lista li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+  }
+  
+  .lista a {
+    color: orangered; /* Ajusta el color del enlace */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+  }
+  
+  .lista a:hover {
+    text-decoration: underline; /* Subraya los enlaces al pasar el ratón */
+  }
+  
+  .formSuge {
+    padding: 30px 88px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 600px;
+    margin-top: -400px;
+    
+  }
+  
+  label {
+    font-size: 15px;
+    color: black;
+    margin-bottom: 15px;
+  
+  }
+  
+  .box {
+    border: 0;
+    background-color: white;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    outline: none;
+  }
+  
+  .submitSuge {
+    background-color: orange;
+    border: 0;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    padding: 10px;
+    width: 250px;
+    margin-top: 15px;
+    margin-left:auto ;
+    
+  }
+  
+  .politica{
+    color: black;
+  }
+  

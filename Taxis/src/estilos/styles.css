@@ -1,0 +1,395 @@
+:root {
+  --ColorPrincipal: #FF914D;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: #fceabb;
+  /* fallback for old browsers */
+  background: linear-gradient(to right, #f8b500, #fceabb, #fceabb, #f8b500, #f8b500);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #f8b500, #fceabb, #fceabb, #f8b500, #f8b500);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f8b500, #fceabb, #fceabb);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*lOGIN Y REGISTRO MAYCOL*/
+/*//////////////////////////////////////////////////////////////////////////*/
+.Login {
+  margin-top: 82px;
+}
+
+.LoginPaginaCompleta {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.LoginInput:focus {
+  outline: none;
+}
+
+.LoginFondoImagen {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  padding: 1rem 0;
+}
+
+.LoginTituloSesion {
+  color: var(--ColorPrincipal);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.LoginContenedor {
+  background-color: white;
+  max-width: 450px;
+  padding: 50px;
+  border-radius: 2rem;
+  margin: 2rem 10rem;
+}
+
+.LoginBoton {
+  background-color: var(--ColorPrincipal);
+  border-radius: 2rem;
+  color: white;
+  border: none;
+}
+
+.LoginTextoOpcion {
+  color: red;
+}
+
+
+/* Solicitudes//////////////////////////////////////////////////////////////////////////// */
+.Solicitar {
+  margin-top: 98px;
+}
+
+.SolicitarContenedorTitulo p {
+  margin: 0;
+}
+
+.SolicitarContenedorTitulo {
+  padding: 1rem;
+}
+
+.SolicitarTitulo {
+  font-family: "Russo One", sans-serif;
+  font-size: 2.2rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.SolicitarContenedorPrincipal {
+  width: 70%;
+}
+
+.SolicitarImagenPequeña {
+  width: 1.5rem;
+  height: 2rem;
+}
+
+.SolicitarImagenPequeñaMonto {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.SolicitarImagenPequeñaContenedor {
+  width: 23%;
+  margin: 2rem 0;
+  text-align: end;
+  margin-right: .5rem;
+}
+
+.SolicitarInputContenedor {
+  width: 50%;
+  margin: 1rem 0;
+}
+
+.form-control {
+  border-radius: 2rem;
+}
+
+.SolicitarBotonConfirmar {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #fa5902f3;
+  border-radius: 3rem;
+  color: blanchedalmond;
+  border: none;
+  padding: 10px 10px;
+}
+
+.SolicitarBotonConfirmar:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.SolicitarContenedorBoton {
+  display: flex;
+  justify-content: center;
+}
+
+.SolicitarContenedorMapa {
+  width: 100%;
+  height: 542px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ModalStyles.css */
+
+.SolicitarFondoPantalla {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.50);
+  z-index: 1000;
+}
+
+.SolicitarContenedorPantalla {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 1001;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+  /* width: 75%; */
+}
+
+
+/*PARTE INICIAL //////////////////////////////////////////////////////////////////////////*/
+.inferiorPrincipal {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.imagenPrincipal{
+  width: 100%;
+}
+
+.ContenedorImagenPrincipal{
+  width: 50%;
+  padding-top: 2rem;
+}
+
+.textoContainerPrincipal {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+
+}
+
+
+.primeTexto {
+  margin-top: 0;
+  /* Corrige el valor incorrecto de margen superior */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 40px;
+  margin-left: 10rem;
+  height: 20%;
+  margin-bottom: 1rem;
+  /* Añade un margen inferior para controlar la separación */
+}
+
+.segundoTexto {
+  margin-top: 0;
+  /* Elimina el margen superior */
+  margin-left: 10rem;
+  font-size: 70px;
+  line-height: 1;
+  /* Controla la altura de la línea para reducir espacio */
+}
+
+.tercerTexto {
+  margin-top: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+  font-size: 20px;
+  margin-left: 10rem;
+  height: 20%;
+  margin-bottom: 1rem;
+  /* Añade un margen inferior para controlar la separación */
+}
+
+.BotonDescubrir {
+  margin-left: 10rem;
+  width: 8rem;
+
+}
+
+.BotonDescubrir:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+
+/*AECERCA DE* //////////////////////////////////////////////////////////////////////////*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300rem;
+  max-height: 400px;
+  width: 90%;
+  text-align: nano;
+}
+.DescripcionEmpresa{
+  width: 100%;
+  display: flex;
+  /*aplica 14 pixeles en todos los lados*/
+  padding-top: 1rem;
+}
+.AcercaDeApartadoTexto{
+  width: 80%;
+  margin-top: 3rem;
+  padding-left: 10rem;
+}
+.BotonCerrar{
+  margin-top: 3rem;
+}
+.BotonLeerMas{
+  padding: 15px 30px !important;
+}
+/*HISTORIA*/
+
+.tHistotia{
+  width: 100%;
+  padding-left: 10rem;
+  padding-top: 12rem;
+  font-size: 25px;
+}
+
+.MasSobreHistoria{
+  margin-top: 1rem;
+}
+
+.Historia{
+  text-align: center;
+
+} 
+.ImagenHistoria{
+  display: flex;
+  width: 80%;
+  padding-top: 0;
+  padding-left:4rem ;
+}
+
+.ImagenJefe{
+  position: relative;
+  width: 40%;
+}
+/*LOGO*/
+.tituloLogo{
+  width: 100%;
+  /* padding-left: 9rem;
+  padding-top: 4rem;  */
+  font-size: 25px;
+}
+
+.tLogo{
+  padding-top: 8rem;
+  width: 100%;
+  text-align: end;
+  font-size: 25px;
+  padding-right: 2rem;
+} 
+
+.logoSuntitulo{
+  width: 90%;
+}
+
+.ImagenLogo{
+  display: flex;
+  width: 80%;
+  padding-top: 0;
+  padding-left:4rem;
+}
+.logoEmpresa{
+  position: relative;
+  top: -3rem;
+  width: 40%;
+}
+
+
+/* Footer.css //////////////////////////////////////////////////////////////////////////////////////*/
+.FooterContenedor{
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  font-size: .8rem;
+}
+
+.FooterTituloPaginas{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.FooterContenedoresRedes{
+  margin-top: 20px;
+}
+
+.FooterContenedor a{
+  color: var(--ColorPrincipal);
+  text-decoration: none;
+}
+
+.FooterSeccion{
+  padding: 0 2rem;
+}
+
+.FooterLogosRedes{
+  width: 25px;
+}
+
+
+/* Ayuda //////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.Ayuda{
+  margin: 6.1rem 0;
+}
+
+.Ayuda h3{
+  padding-top: 3rem;
+}
+
+
