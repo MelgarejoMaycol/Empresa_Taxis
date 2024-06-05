@@ -250,7 +250,7 @@ const Solicitar = () => {
                                     <div className="d-flex solicitarImagenEncuesta border-bottom">
                                         <div className="SolicitarImagenPequeñaContenedor">
                                             <img
-                                                src="./src/assets/ImagenUbicacion.png"
+                                                src={ImagenUbicacion}
                                                 alt=""
                                                 className="SolicitarImagenPequeña"
                                                 onClick={() => setPlacingMarkerType("destino")}
