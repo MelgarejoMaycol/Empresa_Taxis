@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Modal from 'react-modal';
+import { motion } from "framer-motion";
 import '../../src/estilos/styles.css';
 import Encabezado from "./Encabezado";
 import Footer from "./Footer";
@@ -211,107 +212,109 @@ const Solicitar = () => {
     };
 
     return (
-        <div className="border">
-           <Encabezado /> 
-            <div className="Solicitar d-flex">
-                <div className="SolicitarContenedorPrincipal">
-                    <div>
-                        <div className="border-bottom SolicitarContenedorTitulo">
-                            <p className="SolicitarTitulo">Solicitar</p>
-                            <p className="SolicitarInfo">Ingresa tu destino y tu llegada con éxito</p>
-                        </div>
-                        <div className="m-2">
-                            <form onSubmit={handleSubmit} className="formSolicitud">
-                                <div className="d-flex solicitarImagenEncuesta">
-                                    <div className="SolicitarImagenPequeñaContenedor">
-                                        <img
-                                            src="./src/assets/ImagenUbicacion.png"
-                                            alt=""
-                                            className="SolicitarImagenPequeña"
-                                            onClick={() => setPlacingMarkerType("actual")}
-                                        />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div className="border">
+                <Encabezado />
+                <div className="Solicitar d-flex">
+                    <div className="SolicitarContenedorPrincipal">
+                        <div>
+                            <div className="border-bottom SolicitarContenedorTitulo">
+                                <p className="SolicitarTitulo">Solicitar</p>
+                                <p className="SolicitarInfo">Ingresa tu destino y tu llegada con éxito</p>
+                            </div>
+                            <div className="m-2">
+                                <form onSubmit={handleSubmit} className="formSolicitud">
+                                    <div className="d-flex solicitarImagenEncuesta">
+                                        <div className="SolicitarImagenPequeñaContenedor">
+                                            <img
+                                                src="./src/assets/ImagenUbicacion.png"
+                                                alt=""
+                                                className="SolicitarImagenPequeña"
+                                                onClick={() => setPlacingMarkerType("actual")}
+                                            />
+                                        </div>
+                                        <div className="SolicitarInputContenedor">
+                                            <label htmlFor="UbicacionActual" className="text-black">Ubicación Actual</label>
+                                            <input
+                                                type="text"
+                                                className="form-control Input"
+                                                placeholder="Ingresa tu ubicación"
+                                                id="UbicacionActual"
+                                                ref={ubicacionActualRef}
+                                                value={ubicacionActual}
+                                                onChange={(e) => setUbicacionActual(e.target.value)}
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="SolicitarInputContenedor">
-                                        <label htmlFor="UbicacionActual" className="text-black">Ubicación Actual</label>
-                                        <input
-                                            type="text"
-                                            className="form-control Input"
-                                            placeholder="Ingresa tu ubicación"
-                                            id="UbicacionActual"
-                                            ref={ubicacionActualRef}
-                                            value={ubicacionActual}
-                                            onChange={(e) => setUbicacionActual(e.target.value)}
-                                        />
+                                    <div className="d-flex solicitarImagenEncuesta border-bottom">
+                                        <div className="SolicitarImagenPequeñaContenedor">
+                                            <img
+                                                src="./src/assets/ImagenUbicacion.png"
+                                                alt=""
+                                                className="SolicitarImagenPequeña"
+                                                onClick={() => setPlacingMarkerType("destino")}
+                                            />
+                                        </div>
+                                        <div className="SolicitarInputContenedor">
+                                            <label htmlFor="UbicacionDestino" className="text-black">Ubicación Destino</label>
+                                            <input
+                                                type="text"
+                                                className="form-control Input"
+                                                placeholder="Ingresa tu destino"
+                                                id="UbicacionDestino"
+                                                ref={ubicacionDestinoRef}
+                                                value={ubicacionDestino}
+                                                onChange={(e) => setUbicacionDestino(e.target.value)}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="d-flex solicitarImagenEncuesta border-bottom">
-                                    <div className="SolicitarImagenPequeñaContenedor">
-                                        <img
-                                            src="./src/assets/ImagenUbicacion.png"
-                                            alt=""
-                                            className="SolicitarImagenPequeña"
-                                            onClick={() => setPlacingMarkerType("destino")}
-                                        />
+                                    <div>
+                                        {mensajeDistancia && <div className="alert alert-warning text-center text-white bg-black" role="alert">{mensajeDistancia}</div>}
+                                        <div className="w-100 SolicitarContenedorBoton m-2">
+                                            <button type="submit" className="SolicitarBotonConfirmar mt-5">Solicitar</button>
+                                        </div>
                                     </div>
-                                    <div className="SolicitarInputContenedor">
-                                        <label htmlFor="UbicacionDestino" className="text-black">Ubicación Destino</label>
-                                        <input
-                                            type="text"
-                                            className="form-control Input"
-                                            placeholder="Ingresa tu destino"
-                                            id="UbicacionDestino"
-                                            ref={ubicacionDestinoRef}
-                                            value={ubicacionDestino}
-                                            onChange={(e) => setUbicacionDestino(e.target.value)}
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    {mensajeDistancia && <div className="alert alert-warning text-center text-white bg-black" role="alert">{mensajeDistancia}</div>}
-                                    <div className="w-100 SolicitarContenedorBoton m-2">
-                                        <button type="submit" className="SolicitarBotonConfirmar mt-5">Solicitar</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
+                    <div className="SolicitarContenedorMapa">
+                        <div ref={mapRef} style={{ width: "100%", height: "500px", borderRadius: "8px" }}></div>
+                    </div>
                 </div>
-                <div className="SolicitarContenedorMapa">
-                    <div ref={mapRef} style={{ width: "100%", height: "500px", borderRadius: "8px" }}></div>
-                </div>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    overlayClassName="SolicitarFondoPantalla"
+                    className="SolicitarContenedorPantalla"
+                    contentLabel="Documento HTML"
+                >
+                    <h2 className="tituloPaginas">Confirmar Viaje</h2>
+                    <div w-100>
+                        <div className="d-flex solicitarImagenEncuesta m-3">
+                            <div className="SolicitarImagenPequeñaContenedor">
+                                <img src="./src/assets/ImagenSignoPesos.png" alt="" className="SolicitarImagenPequeñaMonto" />
+                            </div>
+                            <div className="SolicitarInputContenedor">
+                                <label htmlFor="Monto" className="text-black">Monto</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Monto"
+                                    id="Monto"
+                                    value={monto}
+                                    readOnly
+                                />
+                            </div>
+                        </div>
+                        <div className="text-center">
+                            <button className="BotonGeneral" onClick={() => { closeModal(); PedirServicio(); }}>Pedir Servicio</button>
+                        </div>
+                    </div>
+                    <button onClick={closeModal} className="BotonGeneral">Cerrar</button>
+                </Modal>
             </div>
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                overlayClassName="SolicitarFondoPantalla"
-                className="SolicitarContenedorPantalla"
-                contentLabel="Documento HTML"
-            >
-                <h2 className="tituloPaginas">Confirmar Viaje</h2>
-                <div w-100>
-                    <div className="d-flex solicitarImagenEncuesta m-3">
-                        <div className="SolicitarImagenPequeñaContenedor">
-                            <img src="./src/assets/ImagenSignoPesos.png" alt="" className="SolicitarImagenPequeñaMonto" />
-                        </div>
-                        <div className="SolicitarInputContenedor">
-                            <label htmlFor="Monto" className="text-black">Monto</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Monto"
-                                id="Monto"
-                                value={monto}
-                                readOnly
-                            />
-                        </div>
-                    </div>
-                    <div className="text-center">
-                        <button className="BotonGeneral" onClick={() => {closeModal(); PedirServicio();}}>Pedir Servicio</button>
-                    </div>
-                </div>
-                <button onClick={closeModal} className="BotonGeneral">Cerrar</button>
-            </Modal>
-        </div>
+        </motion.div>
     );
 }
 

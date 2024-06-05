@@ -64,10 +64,8 @@ const Encabezado = () => {
             </div>
             <div className="subtitulos EncabezadoRegistro EncabezadoParte m-auto text-center">
                 {user ? (
-                    <div>
-                        {usuarios.map((usuario, index) => (
-                            <a className="EncabezadoNombreUsuario" onClick={openModal} key={index} >{usuario.nombres}</a>
-                        ))}
+                    <div onClick={() => openModal(user)}>
+                        <p className="EncabezadoNombreUsuario" onClick={openModal}>{user.email}</p>
                     </div>
                 ) : (
                     <>
@@ -84,7 +82,7 @@ const Encabezado = () => {
                 contentLabel="Cerrar Sesión"
             >
                 <div className="SolicitarContenido">
-                    <h2  className='mb-4'>¿Desea cerrar sesión?</h2>
+                    <h2 className='mb-4'>¿Desea cerrar sesión?</h2>
                     <div className="SolicitarBotones d-flex justify-content-around">
                         <button className="BotonGeneral" onClick={closeModal}>Cancelar</button>
                         <button className="BotonGeneral" onClick={handleLogout}>Cerrar Sesión</button>

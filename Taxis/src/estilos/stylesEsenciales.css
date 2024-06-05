@@ -108,7 +108,8 @@ h1 {
 
 .EncabezadoNombreUsuario{
   font-family: "Russo One", sans-serif !important;
-  font-size: 1.3rem;;
+  font-size: 1.3rem;
+  margin-top: 1rem;
 }
 
 .active {
