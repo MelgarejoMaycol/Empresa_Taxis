@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import '../../src/estilos/styles.css';
 import Encabezado from "./Encabezado";
 import ImagenUbicacion from "../assets/ImagenUbicacion.png";
+import ImagenSignoPesos from "../assets/ImagenSignoPesos.png";
 import Footer from "./Footer";
 
 const Solicitar = () => {
@@ -294,7 +295,7 @@ const Solicitar = () => {
                     <div w-100>
                         <div className="d-flex solicitarImagenEncuesta m-3">
                             <div className="SolicitarImagenPequeñaContenedor">
-                                <img src="./src/assets/ImagenSignoPesos.png" alt="" className="SolicitarImagenPequeñaMonto" />
+                                <img src={ImagenSignoPesos} alt="" className="SolicitarImagenPequeñaMonto" />
                             </div>
                             <div className="SolicitarInputContenedor">
                                 <label htmlFor="Monto" className="text-black">Monto</label>
