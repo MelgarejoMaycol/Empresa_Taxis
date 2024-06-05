@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import { collection, addDoc } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { db } from "../credenciales";
+import FondoInicioSesion from '../assets/FondoInicioSesion.png';
 
 const Registro = () => {
     const [nombres, setNombres] = useState('');
@@ -116,7 +117,7 @@ const Registro = () => {
             </div>
             <div className="Login">
                 <div className="LoginFondoImagenContenedor">
-                    <img src="./src/assets/FondoInicioSesion.png" alt="" className="LoginFondoImagen" />
+                    <img src={FondoInicioSesion} alt="" className="LoginFondoImagen" />
                 </div>
                 <motion.div
                     className="d-flex"

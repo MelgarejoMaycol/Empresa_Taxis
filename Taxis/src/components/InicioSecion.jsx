@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import { db } from "../credenciales";
 import { UserContext } from '../context/UserContext.jsx';
 import '../../src/estilos/styles.css';
+import FondoInicioSesion from '../assets/FondoInicioSesion.png';
 
 const InicioSesion = () => {
   const [email, setEmail] = useState('');
@@ -83,7 +84,7 @@ const InicioSesion = () => {
       </div>
       <div className="Login">
         <div className="LoginFondoImagenContenedor">
-          <img src='./src/assets/FondoInicioSesion.png' alt="" className="LoginFondoImagen" />
+          <img src={FondoInicioSesion} alt="" className="LoginFondoImagen" />
         </div>
         <motion.div
           initial={{ opacity: 0, x: -100 }}

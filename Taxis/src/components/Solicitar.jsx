@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { motion } from "framer-motion";
 import '../../src/estilos/styles.css';
 import Encabezado from "./Encabezado";
+import ImagenUbicacion from "../assets/ImagenUbicacion.png";
 import Footer from "./Footer";
 
 const Solicitar = () => {
@@ -227,7 +228,7 @@ const Solicitar = () => {
                                     <div className="d-flex solicitarImagenEncuesta">
                                         <div className="SolicitarImagenPequeñaContenedor">
                                             <img
-                                                src="./src/assets/ImagenUbicacion.png"
+                                                src={ImagenUbicacion}
                                                 alt=""
                                                 className="SolicitarImagenPequeña"
                                                 onClick={() => setPlacingMarkerType("actual")}

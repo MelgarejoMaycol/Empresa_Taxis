@@ -6,6 +6,7 @@ import Modal from 'react-modal';
 import { getAuth, signOut } from 'firebase/auth';
 import { db } from "../credenciales";
 import { collection, getDocs } from 'firebase/firestore';
+import logoEncabezado from "../assets/logoEncabezado.png";
 
 const Encabezado = () => {
     const [usuarios, setUsuarios] = useState([]);
@@ -53,7 +54,7 @@ const Encabezado = () => {
     return (
         <div className="Encabezado">
             <div className="EncabezadoLogo EncabezadoParte">
-                <img className="EncabezadoImagenPrincipal" src="./src/assets/logoEncabezado.png" />
+                <img className="EncabezadoImagenPrincipal" src={logoEncabezado} />
                 <h1>TRANSPORTES O'CLOK S.A.S</h1>
             </div>
             <div className="subtitulos EncabezadoLinks EncabezadoParte">

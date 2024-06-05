@@ -5,6 +5,8 @@ import Encabezado from './Encabezado';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../../src/estilos/stylesEsenciales.css';
 import '../../src/estilos/styles.css'
+import jefe from '../assets/jefe.jpg';
+import logoOriginal from '../assets/logoOriginal.png';
 import Footer from './Footer';
 
 const AcercaDe = () => {
@@ -53,7 +55,7 @@ const AcercaDe = () => {
               </div>
             </div>
             <div className='ImagenJefe'>
-              <img className='ImagenHistoria' src='./src/assets/jefe.jpg' />
+              <img className='ImagenHistoria' src={jefe} />
             </div>
           </div>
         </div>
@@ -63,7 +65,7 @@ const AcercaDe = () => {
           </div>
           <div className='DescripcionEmpresa'>
             <div className='logoEmpresa'>
-              <img className='ImagenLogo' src='./src/assets/logoOriginal.png' />
+              <img className='ImagenLogo' src={logoOriginal} />
             </div>
             <div className="subtitulos AcercaDeApartadoTexto ">
               <p className='logoSuntitulo'>
