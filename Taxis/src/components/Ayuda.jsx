@@ -47,7 +47,6 @@ function App() {
               <a href="/solicitar">solicitar taxi</a>
             </div>
           </div>
-          <a href="/" className="buttom buttom-primary" >volver al inicio</a>
         </article>
       </section>
       <Footer />

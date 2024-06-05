@@ -211,8 +211,8 @@ const Solicitar = () => {
     };
 
     return (
-        <div className="">
-            <Encabezado />
+        <div className="border">
+           <Encabezado /> 
             <div className="Solicitar d-flex">
                 <div className="SolicitarContenedorPrincipal">
                     <div>
@@ -311,7 +311,6 @@ const Solicitar = () => {
                 </div>
                 <button onClick={closeModal} className="BotonGeneral">Cerrar</button>
             </Modal>
-            <Footer />
         </div>
     );
 }

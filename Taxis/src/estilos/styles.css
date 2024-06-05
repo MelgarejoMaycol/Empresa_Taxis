@@ -7,6 +7,10 @@
   margin: 0;
 }
 
+.border{
+  border-bottom: 5px solid white !important;
+}
+
 body {
   background: #fceabb;
   /* fallback for old browsers */
@@ -16,7 +20,7 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #f8b500, #fceabb, #fceabb);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+} 
 
 /*lOGIN Y REGISTRO MAYCOL*/
 /*//////////////////////////////////////////////////////////////////////////*/
@@ -64,6 +68,11 @@ body {
 
 .LoginTextoOpcion {
   color: red;
+}
+
+.partes{
+  background-color: white;
+  margin: 4rem;
 }
 
 
@@ -318,6 +327,7 @@ body {
 .tituloLogo{
   width: 100%;
   font-size: 25px;
+
 }
 
 .tLogo{
@@ -325,6 +335,7 @@ body {
   width: 100%;
   text-align: end;
   font-size: 25px;
+  
   padding-right: 7rem;
 } 
 

@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Encabezado from "./Encabezado";
 import Solicitar from "./Solicitar";
-
+import AcercaDe from "./AcercaDe";
+import Sugerencias from "./Sugerencias";
+import Ayuda from "./Ayuda";
 import { motion } from 'framer-motion';
 import Footer from "./Footer";
 import '../../src/estilos/stylesEsenciales.css';
 import '../../src/estilos/styles.css';
+
 const PaginaPrincipal = () => {
   return (
     <div>
       <div>
         <Encabezado />
-      </div> 
-      <div className="inferiorPrincipal">
+      </div>
+      <div className="inferiorPrincipal border">
         <div className="textoContainerPrincipal">
           <p className=" subtitulos primeTexto ">
             A TU ALCANCE
@@ -23,14 +26,15 @@ const PaginaPrincipal = () => {
           <p className="subtitulos tercerTexto ">
             Descubre nuestros servicios, lo que tu puedes lograr con ellos y como tenemos tu participación en cuenta.
           </p>
-          <a className='BotonGeneral subtitulos BotonDescubrir'>DESCUBRIR</a>
+          <a className='BotonGeneral subtitulos BotonDescubrir' href="solicitar">DESCUBRIR</a>
         </div>
         <div className="ContenedorImagenPrincipal">
-          <AnimatedImagen  src="./src/assets/ImagenPrincipal.png"/> 
+          <AnimatedImagen src="./src/assets/ImagenPrincipal.png" />
         </div>
       </div>
-      <Footer />
-      <Solicitar/>
+      <Solicitar />
+      <AcercaDe />
+      <Ayuda/>
     </div>
   )
 };
@@ -58,7 +62,7 @@ const AnimatedImagen = ({ src }) => {
   }, [scrollPos]);
 
   return (
-      <motion.img
+    <motion.img
       className="imagenPrincipal"
       src={src}
       initial={{ y: 0 }}

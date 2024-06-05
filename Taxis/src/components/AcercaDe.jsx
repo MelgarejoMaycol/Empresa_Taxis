@@ -31,29 +31,60 @@ const AcercaDe = () => {
   return (
     <div>
       <Encabezado />
-      <div className='tituloPaginas tHistotia'>
-        NUESTRA HISTORIA
-      </div>
-      <div className='DescripcionEmpresa'>
-        <div className="subtitulos AcercaDeApartadoTexto">
-          <p>
-            ¡Hola! Soy Claudia Leonor Ortiz, fundador de Transportes O'clock S.A.S., y quiero contarles
-            la historia de cómo comenzó nuestra empresa de taxis.
-            Todo empezó hace diez años, cuando me encontraba trabajando en un empleo que no me satisfacía.
-            Siempre tuve una pasión por los autos y un deseo de ofrecer un servicio de transporte seguro y
-            confiable en nuestra ciudad, que en ese entonces carecía de opciones de calidad. Un día, después de
-            una larga jornada de trabajo, estaba tomando un café con mi amigo Jorge, quien compartía mis inquietudes.
-            Hablando de nuestros sueños y frustraciones, surgió la idea de iniciar una empresa de taxis que se distinguiera
-            por su puntualidad y excelencia en el servicio.
-          </p>
-          <div className='mt-5'>
-            <a href="#" onClick={openModal} className='BotonLeerMas BotonGeneral'>Leer Más</a>
+      <div className='border'>
+        <div>
+          <div className='tituloPaginas tHistotia'>
+            <h1>NUESTRA HISTORIA</h1>
+          </div>
+          <div className='DescripcionEmpresa'>
+            <div className="subtitulos AcercaDeApartadoTexto">
+              <p>
+                ¡Hola! Soy Claudia Leonor Ortiz, fundador de Transportes O'clock S.A.S., y quiero contarles
+                la historia de cómo comenzó nuestra empresa de taxis.
+                Todo empezó hace diez años, cuando me encontraba trabajando en un empleo que no me satisfacía.
+                Siempre tuve una pasión por los autos y un deseo de ofrecer un servicio de transporte seguro y
+                confiable en nuestra ciudad, que en ese entonces carecía de opciones de calidad. Un día, después de
+                una larga jornada de trabajo, estaba tomando un café con mi amigo Jorge, quien compartía mis inquietudes.
+                Hablando de nuestros sueños y frustraciones, surgió la idea de iniciar una empresa de taxis que se distinguiera
+                por su puntualidad y excelencia en el servicio.
+              </p>
+              <div className='mt-5'>
+                <a href="#" onClick={openModal} className='BotonLeerMas BotonGeneral'>Leer Más</a>
+              </div>
+            </div>
+            <div className='ImagenJefe'>
+              <img className='ImagenHistoria' src='./src/assets/jefe.jpg' />
+            </div>
           </div>
         </div>
-        <div className='ImagenJefe'>
-          <img className='ImagenHistoria' src='./src/assets/jefe.jpg' />
+        <div>
+          <div className='tituloPaginas tLogo'>
+           <h1>NUESTRO LOGO</h1> 
+          </div>
+          <div className='DescripcionEmpresa'>
+            <div className='logoEmpresa'>
+              <img className='ImagenLogo' src='./src/assets/logoOriginal.png' />
+            </div>
+            <div className="subtitulos AcercaDeApartadoTexto ">
+              <p className='logoSuntitulo'>
+                El logo de "Transportes O'Clock S.A.S" presenta un diseño dinámico y moderno.
+                En el centro, se encuentra un dibujo estilizado de un automóvil deportivo en color negro,
+                que sugiere velocidad y eficiencia. Debajo del auto, el nombre de la empresa "TRANSPORTES O'CLOCK S.A.S" está escrito en letras mayúsculas,
+                con "TRANSPORTES" en una fuente más fina y "O'CLOCK" en una fuente más gruesa y angular, dando una
+                sensación de solidez y profesionalismo.
+              </p>
+              <div className='mt-5 mb-5'>
+                <a href="#" onClick={openLogo} className='BotonLeerMas BotonGeneral'>Leer Más</a>
+              </div>
+            </div>
+            <div className='w-60'>
+
+            </div>
+          </div>
         </div>
+
       </div>
+
 
       <AnimatePresence>
         {isModalOpen && (
@@ -92,29 +123,6 @@ const AcercaDe = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className='tituloPaginas tLogo'>
-        NUESTRO LOGO
-      </div>
-      <div className='DescripcionEmpresa'>
-        <div className='logoEmpresa'>
-        <img className='ImagenLogo' src='./src/assets/logoOriginal.png' />
-        </div>
-        <div className="subtitulos AcercaDeApartadoTexto ">
-          <p className='logoSuntitulo'>
-          El logo de "Transportes O'Clock S.A.S" presenta un diseño dinámico y moderno. 
-          En el centro, se encuentra un dibujo estilizado de un automóvil deportivo en color negro, 
-          que sugiere velocidad y eficiencia. Debajo del auto, el nombre de la empresa "TRANSPORTES O'CLOCK S.A.S" está escrito en letras mayúsculas,
-          con "TRANSPORTES" en una fuente más fina y "O'CLOCK" en una fuente más gruesa y angular, dando una
-          sensación de solidez y profesionalismo.
-          </p>
-          <div className='mt-5 mb-5'>
-            <a href="#" onClick={openLogo} className='BotonLeerMas BotonGeneral'>Leer Más</a>
-          </div>
-        </div>
-        <div className='w-60'>
-
-        </div>
-      </div>
       <AnimatePresence>
         {isopenLogo && (
           <motion.div
@@ -133,15 +141,15 @@ const AcercaDe = () => {
               <div className='subtitulos MasSobreLogo'>
                 <p className='logo'>
                   El logo de "Transportes O'Clock S.A.S" utiliza una combinación de colores vibrantes y contrastantes:
-Púrpura: El trazo curvo que forma una media luna a la izquierda del logo comienza en un tono púrpura oscuro. Este color evoca sensaciones de lujo, creatividad y misterio.
+                  Púrpura: El trazo curvo que forma una media luna a la izquierda del logo comienza en un tono púrpura oscuro. Este color evoca sensaciones de lujo, creatividad y misterio.
 
-Degradado hacia rosa: A medida que el trazo avanza hacia la parte superior derecha del logo, el púrpura se degrada suavemente hacia un tono rosado. Este cambio de color añade dinamismo y frescura al diseño.
+                  Degradado hacia rosa: A medida que el trazo avanza hacia la parte superior derecha del logo, el púrpura se degrada suavemente hacia un tono rosado. Este cambio de color añade dinamismo y frescura al diseño.
 
-Estrella brillante: La estrella en la esquina superior derecha es de color naranja brillante en su exterior, con un interior que combina tonos de rosa, púrpura y detalles brillantes o glitter. Este elemento resalta fuertemente debido a sus colores llamativos y su diseño brillante, simbolizando éxito y destacando la marca.
+                  Estrella brillante: La estrella en la esquina superior derecha es de color naranja brillante en su exterior, con un interior que combina tonos de rosa, púrpura y detalles brillantes o glitter. Este elemento resalta fuertemente debido a sus colores llamativos y su diseño brillante, simbolizando éxito y destacando la marca.
 
-Negro: El automóvil y las letras "TRANSPORTES O'CLOCK S.A.S" están en color negro, lo que aporta un contraste fuerte y una sensación de elegancia, formalidad y profesionalismo.
+                  Negro: El automóvil y las letras "TRANSPORTES O'CLOCK S.A.S" están en color negro, lo que aporta un contraste fuerte y una sensación de elegancia, formalidad y profesionalismo.
 
-En conjunto, estos colores crean una imagen moderna, enérgica y profesional, llamando la atención y sugiriendo eficiencia y dinamismo en los servicios de la empresa.
+                  En conjunto, estos colores crean una imagen moderna, enérgica y profesional, llamando la atención y sugiriendo eficiencia y dinamismo en los servicios de la empresa.
                 </p>
               </div>
 
@@ -152,7 +160,6 @@ En conjunto, estos colores crean una imagen moderna, enérgica y profesional, ll
       </AnimatePresence>
       <div>
       </div>
-      <Footer />
     </div>
   );
 };
