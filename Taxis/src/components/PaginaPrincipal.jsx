@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import Footer from "./Footer";
 import '../../src/estilos/stylesEsenciales.css';
 import '../../src/estilos/styles.css';
+import imagenPrincipal from "../assets/imagenPrincipal.png";
 
 const PaginaPrincipal = () => {
   return (
@@ -29,7 +30,7 @@ const PaginaPrincipal = () => {
           <a className='BotonGeneral subtitulos BotonDescubrir' href="solicitar">DESCUBRIR</a>
         </div>
         <div className="ContenedorImagenPrincipal">
-          <AnimatedImagen src="./src/assets/ImagenPrincipal.png" />
+          <AnimatedImagen src={imagenPrincipal} />
         </div>
       </div>
       <Solicitar />
