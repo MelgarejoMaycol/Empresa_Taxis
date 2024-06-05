@@ -8,28 +8,36 @@ import ImagenSignoPesos from "../assets/ImagenSignoPesos.png";
 import Footer from "./Footer";
 
 const Solicitar = () => {
+    // Estado para controlar si el modal está abierto o cerrado
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    // Estados para almacenar la ubicación actual, destino, monto y mensaje de distancia
     const [ubicacionActual, setUbicacionActual] = useState("");
     const [ubicacionDestino, setUbicacionDestino] = useState("");
     const [monto, setMonto] = useState("");
     const [mensajeDistancia, setMensajeDistancia] = useState("");
+    // Estados para controlar el mapa, renderizador de direcciones y marcadores
     const [map, setMap] = useState(null);
     const [directionsRenderer, setDirectionsRenderer] = useState(null);
     const [markerActual, setMarkerActual] = useState(null);
     const [markerDestino, setMarkerDestino] = useState(null);
+    // Estado para indicar el tipo de marcador que se está colocando
     const [placingMarkerType, setPlacingMarkerType] = useState("");
-    const mapRef = useRef(null);
-
+    // Referencias para los campos de ubicación actual y destino
     const ubicacionActualRef = useRef(null);
     const ubicacionDestinoRef = useRef(null);
+    // Referencia para el mapa
+    const mapRef = useRef(null);
 
+    // Efecto para inicializar el mapa y configurar los autocompletados
     useEffect(() => {
         if (window.google) {
+            // Configuración de opciones para los autocompletados de ubicación actual y destino
             const options = {
                 types: ['geocode'],
                 componentRestrictions: { country: "co" }
             };
 
+            // Autocompletado para la ubicación actual
             const autocompleteActual = new window.google.maps.places.Autocomplete(ubicacionActualRef.current, options);
             autocompleteActual.setBounds(new window.google.maps.LatLngBounds(
                 new window.google.maps.LatLng(7.096, -73.125),
@@ -41,6 +49,7 @@ const Solicitar = () => {
                 setMarkerLocation(place.geometry.location, "actual");
             });
 
+            // Autocompletado para la ubicación destino
             const autocompleteDestino = new window.google.maps.places.Autocomplete(ubicacionDestinoRef.current, options);
             autocompleteDestino.setBounds(new window.google.maps.LatLngBounds(
                 new window.google.maps.LatLng(7.096, -73.125),
@@ -52,6 +61,7 @@ const Solicitar = () => {
                 setMarkerLocation(place.geometry.location, "destino");
             });
 
+            // Inicialización del mapa
             const initMap = new window.google.maps.Map(mapRef.current, {
                 center: { lat: 7.11392, lng: -73.1198 },
                 zoom: 13,
@@ -74,8 +84,9 @@ const Solicitar = () => {
                     { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#3fb0fc" }] }
                 ]
             });
+            
 
-            const directionsService = new window.google.maps.DirectionsService();
+            // Configuración del renderizador de direcciones
             const directionsRenderer = new window.google.maps.DirectionsRenderer({
                 polylineOptions: {
                     strokeColor: "#B500EB"
@@ -84,6 +95,7 @@ const Solicitar = () => {
             });
             directionsRenderer.setMap(initMap);
 
+            // Configuración de eventos para colocar marcadores en el mapa
             initMap.addListener("click", (event) => {
                 if (placingMarkerType) {
                     setMarkerLocation(event.latLng, placingMarkerType);
@@ -91,37 +103,49 @@ const Solicitar = () => {
                 }
             });
 
+            // Actualización de los estados del mapa y renderizador de direcciones
             setMap(initMap);
             setDirectionsRenderer(directionsRenderer);
         }
     }, [placingMarkerType]);
 
+    // Función para abrir el modal
     const openModal = () => {
         setModalIsOpen(true);
     };
 
+    // Función para cerrar el modal
     const closeModal = () => {
         setModalIsOpen(false);
     };
 
+    // Función para solicitar el servicio
     const PedirServicio = () => {
-        alert("Servicio solicitado por favor espere al conductor" + "\n" + "Monto: " + monto + "\n" + "Ubicación Actual: " + ubicacionActual + "\n" + "Ubicación Destino: " + ubicacionDestino + "\n" + "Gracias por preferirnos");
-    }
+        // Lógica para solicitar el servicio y mostrar un mensaje de confirmación
+        alert("Servicio solicitado por favor espere al conductor" + "\n" + "Monto"+ ": " + monto + "\n" + "Ubicación Actual: " + ubicacionActual + "\n" + "Ubicación Destino: " + ubicacionDestino + "\n" + "Gracias por preferirnos");
+    };
 
+    // Función para manejar el envío del formulario
     const handleSubmit = (event) => {
         event.preventDefault();
+        // Verificar si se han ingresado ubicaciones
         if (ubicacionActual && ubicacionDestino) {
+            // Calcular la distancia y la ruta entre las ubicaciones
             calculateDistanceAndRoute(ubicacionActual, ubicacionDestino);
+            // Abrir el modal
             openModal();
         } else {
+            // Mostrar una alerta si faltan ubicaciones
             alert("Por favor ingrese la ubicación actual y el destino");
         }
     };
 
+    // Función para calcular la distancia y la ruta entre dos ubicaciones
     const calculateDistanceAndRoute = (origin, destination) => {
         if (!window.google) {
             return;
         }
+        // Servicio para obtener la matriz de distancias
         const service = new window.google.maps.DistanceMatrixService();
         service.getDistanceMatrix(
             {
@@ -151,10 +175,12 @@ const Solicitar = () => {
         );
     };
 
+    // Función para calcular y mostrar la ruta entre dos ubicaciones
     const calculateAndDisplayRoute = (origin, destination) => {
         if (!map) {
             return;
         }
+        // Servicio para calcular la ruta
         const service = new window.google.maps.DirectionsService();
         service.route(
             {
@@ -172,14 +198,17 @@ const Solicitar = () => {
         );
     };
 
+    // Función para establecer la ubicación de un marcador en el mapa
     const setMarkerLocation = (location, type) => {
         if (!window.google) {
             return;
         }
+        // Geocodificación para obtener la dirección a partir de las coordenadas
         const geocoder = new window.google.maps.Geocoder();
         geocoder.geocode({ location: location }, (results, status) => {
             if (status === "OK" && results[0]) {
                 const address = results[0].formatted_address;
+                // Crear y mostrar el marcador en el mapa
                 if (type === "actual") {
                     if (markerActual) {
                         markerActual.setMap(null);
@@ -321,3 +350,5 @@ const Solicitar = () => {
 }
 
 export default Solicitar;
+
+
