@@ -108,51 +108,52 @@ const InicioSesion = () => {
           animate={{ opacity: 1, x: 0 }} // Animación al mostrar
           transition={{ duration: 0.5 }} // Duración de la animación
         >
-          <div className="LoginPaginaCompleta">
-            <div className="LoginContenedor w-50 d-flex flex-column">
-              {/* Título de la página de inicio de sesión */}
-              <label className="text-center m-4 LoginTituloSesion">INICIO SESION</label>
-              {/* Formulario de inicio de sesión */}
-              <form className="d-flex flex-column" onSubmit={handleLogin}>
-                {/* Campo de correo electrónico */}
-                <label className="mb-3" htmlFor="email">Email</label>
-                <input
-                  className="Input mt-2 mb-2 p-2 text-field"
-                  type="email"
-                  id='email'
-                  value={email}
-                  onChange={(e) => {
-                    toLower(e); // Convertir el correo electrónico a minúsculas
-                    validarEmail(e); // Validar el formato del correo electrónico
-                  }}
-                  required
-                  autoComplete="off"
-                  placeholder="Ingrese su correo electrónico"
-                />
-                {/* Campo de contraseña */}
-                <label className="mt-2 mb-2" htmlFor="password" >Password</label>
-                <input
-                  className="Input mt-2 mb-2 p-2 text-field"
-                  type="password"
-                  id='password'
-                  value={password}
-                  onChange={(e) => {
-                    validarPassword(e); // Validar el formato de la contraseña
-                  }}
-                  required
-                  autoComplete="off"
-                  placeholder="Ingrese su contraseña"
-                />
-                {/* Botón de inicio de sesión */}
-                <button className="BotonGeneral mt-5 mb-4 p-2 boton" type="submit">Iniciar Sesión</button>
-              </form>
-              {/* Mensaje de error en caso de fallo en el inicio de sesión */}
-              {error && <p className="text-center text-danger">Revise los parámetros </p>}
-              {/* Enlace para redirigir al usuario a la página de registro */}
-              <a className="text-center text-decoration-none LoginTextoOpcion" href="/Registro">No tienes cuenta? Regístrate</a>
-            </div>
+          <div className="LoginTituloContenedor">
+            {/* Título de la página de inicio de sesión */}
+            <label className="text-center LoginTituloSesion">INICIO SESION</label>
           </div>
         </motion.div>
+        <div className="LoginFormularioContenedor">
+          <form className="LoginFormulario d-flex flex-column" onSubmit={handleLogin}>
+            {/* Campo de correo electrónico */}
+            <label className="mb-3" htmlFor="email">Email</label>
+            <input
+              className="Input mt-2 mb-2 p-2 text-field"
+              type="email"
+              id='email'
+              value={email}
+              onChange={(e) => {
+                toLower(e); // Convertir el correo electrónico a minúsculas
+                validarEmail(e); // Validar el formato del correo electrónico
+              }}
+              required
+              autoComplete="off"
+              placeholder="Ingrese su correo electrónico"
+            />
+            {/* Campo de contraseña */}
+            <label className="mt-2 mb-2" htmlFor="password" >Password</label>
+            <input
+              className="Input mt-2 mb-2 p-2 text-field"
+              type="password"
+              id='password'
+              value={password}
+              onChange={(e) => {
+                validarPassword(e); // Validar el formato de la contraseña
+              }}
+              required
+              autoComplete="off"
+              placeholder="Ingrese su contraseña"
+            />
+            {/* Botón de inicio de sesión */}
+            <button className="BotonGeneral mt-5 mb-4 p-2 boton" type="submit">Iniciar Sesión</button>
+          </form>
+          {/* Mensaje de error en caso de fallo en el inicio de sesión */}
+          {error && <p className="text-center text-danger">Revise los parámetros </p>}
+        </div>
+        <div className="LoginEnlacesContenedor">
+          {/* Enlace para redirigir al usuario a la página de registro */}
+          <a className="text-center text-decoration-none LoginEnlace" href="/Registro">No tienes cuenta? Regístrate</a>
+        </div>
       </div>
       {/* Componente de Pie dePágina */}
       <Footer />

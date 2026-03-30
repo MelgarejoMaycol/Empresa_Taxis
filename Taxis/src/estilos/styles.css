@@ -26,12 +26,16 @@ body {
 /*//////////////////////////////////////////////////////////////////////////*/
 .Login {
   margin-top: var(--EncabezadoHeight, 90px);
+  background-color: white;
+  padding: 2rem 0;
 }
 
 .LoginPaginaCompleta {
   display: flex;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  min-height: auto;
 }
 
 .LoginInput:focus {
@@ -43,6 +47,8 @@ body {
   width: 100%;
   z-index: -1;
   padding: 1rem 0;
+  opacity: 0;
+  display: none;
 }
 
 .LoginTituloSesion {
@@ -51,12 +57,20 @@ body {
   font-weight: 700;
 }
 
+.LoginTituloContenedor {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
 .LoginContenedor {
   background-color: white;
   max-width: 450px;
   padding: 50px;
   border-radius: 2rem;
-  margin: 2rem 10rem;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .LoginBoton {
@@ -68,6 +82,113 @@ body {
 
 .LoginTextoOpcion {
   color: red;
+}
+
+.LoginFormularioContenedor {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.LoginFormulario {
+  background-color: white;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.LoginEnlacesContenedor {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem 2rem 2rem;
+  width: 100%;
+}
+
+.LoginEnlace {
+  color: var(--ColorPrincipal);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.LoginEnlace:hover {
+  text-decoration: underline;
+}
+
+/* Desktop styles para Login y Registro - Labels y Botones más grandes */
+@media (min-width: 1001px) {
+  .LoginFormulario label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .LoginFormulario .Input {
+    font-size: 1.1rem;
+    padding: 0.9rem !important;
+  }
+
+  .LoginFormulario .BotonGeneral {
+    font-size: 1.1rem;
+    padding: 1rem !important;
+    font-weight: 600;
+  }
+}
+
+/* Media queries - Responsive para Login y Registro en pantallas menores a 1000px */
+@media (max-width: 1000px) {
+  .Login {
+    padding: 1rem 0;
+  }
+
+  .LoginTituloContenedor {
+    padding: 1rem;
+  }
+
+  .LoginTituloSesion {
+    font-size: 1.8rem;
+  }
+
+  .LoginPaginaCompleta {
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .LoginContenedor {
+    max-width: 100%;
+    width: 90%;
+    padding: 2rem;
+    margin: 2rem auto;
+  }
+
+  .LoginFormularioContenedor {
+    padding: 1rem;
+  }
+
+  .LoginFormulario {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .LoginEnlacesContenedor {
+    padding: 0.5rem 1rem 1rem 1rem;
+  }
+
+  .LoginEnlace {
+    font-size: 0.9rem;
+  }
+
+  .Input {
+    font-size: 1rem;
+    padding: 0.8rem !important;
+  }
+
+  .BotonGeneral {
+    font-size: 1rem;
+    padding: 0.8rem !important;
+  }
 }
 
 .partes{
