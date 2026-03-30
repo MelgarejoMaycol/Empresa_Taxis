@@ -1,6 +1,13 @@
 {
-  "buildCommand": "cd Taxis && npm run build",
-  "outputDirectory": "Taxis/dist",
-  "devCommand": "cd Taxis && npm run dev",
-  "installCommand": "npm install"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "roots": {
+    "Taxis": {
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist",
+      "devCommand": "npm run dev"
+    }
+  }
 }
