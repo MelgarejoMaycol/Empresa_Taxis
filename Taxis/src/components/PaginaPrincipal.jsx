@@ -26,6 +26,7 @@ const PaginaPrincipal = () => {
           <p className="subtitulos tercerTexto ">
             Descubre nuestros servicios, lo que tu puedes lograr con ellos y como tenemos tu participación en cuenta.
           </p>
+          <a className='BotonGeneral subtitulos BotonDescubrir' href="/Ayuda">OBTENER AYUDA</a>
         </div>
         <div className="ContenedorImagenPrincipal">
           <AnimatedImagen src={imagenPrincipal} />
