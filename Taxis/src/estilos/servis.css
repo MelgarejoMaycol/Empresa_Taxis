@@ -110,3 +110,59 @@
     border-radius: 15px;
     margin-top: 25px;
   }
+
+  /* Media queries - Responsive para pantallas menores a 1000px */
+  @media (max-width: 1000px) {
+    .sevicio_ayuda {
+      padding: 30px 20px;
+    }
+
+    .articulo_ayuda {
+      width: 100%;
+    }
+
+    .titulo1 {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    .titulo1 h2 {
+      font-size: 1.5rem;
+    }
+
+    .titulo1 p {
+      font-size: 1rem;
+    }
+
+    .encapsulado1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .encap1_1 {
+      max-width: 90%;
+      width: 100%;
+      margin: 1rem 0;
+      padding: 1.5rem 1rem;
+    }
+
+    .encap1_1 i {
+      font-size: 40px;
+    }
+
+    .encap1_1 h3 {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .encap1_1 p {
+      font-size: 0.95rem;
+    }
+
+    .encap1_1 a {
+      font-size: 0.95rem;
+      padding: 8px 20px;
+    }
+  }
