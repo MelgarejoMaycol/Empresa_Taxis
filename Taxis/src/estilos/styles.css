@@ -538,6 +538,41 @@ body {
   width: 25px;
 }
 
+/* Media queries - Responsive Footer para pantallas menores a 1000px */
+@media (max-width: 1000px) {
+  .FooterContenedor {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .FooterSeccion {
+    width: 100% !important;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 1rem;
+  }
+
+  .FooterSeccion:last-of-type {
+    border-bottom: none;
+  }
+
+  .FooterTituloPaginas {
+    font-size: 1.2rem;
+  }
+
+  .FooterSeccion p,
+  .FooterSeccion ul {
+    font-size: 0.9rem;
+  }
+
+  .FooterSeccion ul {
+    padding-left: 1rem;
+  }
+
+  .FooterContenedoresRedes {
+    margin-top: 1rem;
+  }
+}
 
 /* Ayuda //////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
