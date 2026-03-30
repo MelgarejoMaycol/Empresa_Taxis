@@ -444,6 +444,65 @@ body {
   width: 40%;
 }
 
+/* Media queries - Responsive para pantallas menores a 1000px */
+@media (max-width: 1000px) {
+  .DescripcionEmpresa {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .AcercaDeApartadoTexto {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
+    order: 2;
+  }
+  
+  .ImagenJefe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    margin-bottom: 2rem;
+  }
+  
+  .ImagenHistoria {
+    width: 80%;
+    max-width: 400px;
+    padding-left: 0 !important;
+  }
+  
+  .tHistotia {
+    padding-left: 2rem;
+    padding-top: 6rem;
+  }
+  
+  .tLogo {
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 6rem;
+  }
+  
+  .logoEmpresa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    margin-bottom: 2rem;
+    top: 0;
+  }
+  
+  .ImagenLogo {
+    width: 80%;
+    max-width: 300px;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
 
 /* Footer.css //////////////////////////////////////////////////////////////////////////////////////*/
 .FooterContenedor{
