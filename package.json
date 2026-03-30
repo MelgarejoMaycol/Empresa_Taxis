@@ -1,0 +1,14 @@
+{
+  "name": "empresa-taxis-root",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "cd Taxis && npm run build",
+    "dev": "cd Taxis && npm run dev",
+    "preview": "cd Taxis && npm run preview",
+    "lint": "cd Taxis && npm run lint"
+  },
+  "workspaces": [
+    "Taxis"
+  ]
+}
