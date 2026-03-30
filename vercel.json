@@ -1,5 +1,4 @@
 {
-  "projectSettings": {
-    "rootDirectory": "Taxis"
-  }
+  "buildCommand": "bash build.sh",
+  "outputDirectory": "Taxis/dist"
 }
