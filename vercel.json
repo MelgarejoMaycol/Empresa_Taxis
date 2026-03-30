@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd Taxis && npm run build",
+  "outputDirectory": "Taxis/dist",
+  "devCommand": "cd Taxis && npm run dev",
+  "installCommand": "npm install"
+}
