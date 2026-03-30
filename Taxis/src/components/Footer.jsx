@@ -12,7 +12,6 @@ const Footer = () => {
                 <div className="FooterSeccion w-25">
                     <h3 className="FooterTituloPaginas">Enlaces Útiles</h3>
                     <ul>
-                        <li><a href="/solicitar">Solicitar</a></li>
                         <li><a href="/AcercaDe">Acerca De</a></li>
                         <li><a href="/Ayuda">Ayuda</a></li>
                         <li><a href="/Sugerencias">Sugerencias</a></li>

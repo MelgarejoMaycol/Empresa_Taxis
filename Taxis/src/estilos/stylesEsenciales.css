@@ -1,5 +1,6 @@
 :root {
   --ColorPrincipal: #FF914D;
+  --EncabezadoHeight: 90px;
 }
 
 /*TITULO DE LA EMPRESA COMO LOGO*/
@@ -12,8 +13,7 @@ h1 {
       width: px; */
   font-size: 150%;
   color: rgb(0, 0, 0);
-  margin-top: 1.4rem;
-  margin-left: 2rem;
+  margin: 0;
 }
 
 /*Encabezado que debe llevar todas las paginas*/
@@ -31,38 +31,50 @@ h1 {
   top: 0;
   left: 0;
   z-index: 1000;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  min-height: 70px;
 }
 
 .EncabezadoImagenPrincipal {
-  width: 90px;
-  margin-left: 100px;
+  width: 70px;
+  margin-left: 0;
   /* margin-block-start: auto; */
 }
 
 .EncabezadoParte {
-  width: 30%;
+  width: auto;
   /* background-color: aquamarine; */
 }
 
 .EncabezadoLogo {
   display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.EncabezadoLogo h1 {
+  margin-top: 0;
+  margin-left: 1rem;
+  font-size: 1.2rem;
 }
 
 .EncabezadoLinks {
-
-  margin-top: 2.5rem;
-  margin-left: 5rem;
-  width: 40%;
-  justify-content: space-between;
-
+  margin-top: 0;
+  margin-left: 0;
+  width: auto;
+  justify-content: center;
+  display: flex;
+  flex: 2;
+  gap: 1.5rem;
 }
 
 .EncabezadoLinks a {
-
   text-decoration: none;
-
-  /* margin: 0 auto; */
-  margin-right: 48px;
+  margin-right: 0;
+  font-size: 0.95rem;
 }
 
 .EncabezadoLinks a:active,
@@ -82,7 +94,10 @@ h1 {
 }
 
 .EncabezadoRegistro {
-  margin-top: 2.5rem;
+  margin-top: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .EncabezadoRegistro a {
@@ -102,8 +117,150 @@ h1 {
 }
 
 .EncabezadoBotonRegistrarme {
-  margin-left: 2rem;
+  margin-left: 0;
   color: white !important;
+  padding: 0.5rem 1rem;
+}
+
+/* Estilos para el botón hamburguesa */
+.EncabezadoBotonHamburguesa {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 0.4rem;
+}
+
+.EncabezadoBotonHamburguesa span {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.EncabezadoBotonHamburguesa.activo span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.EncabezadoBotonHamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.EncabezadoBotonHamburguesa.activo span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Menú móvil */
+.EncabezadoMenuMobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #fceabb, #fceabb, #f8b500);
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.EncabezadoMenuMobile.activo {
+  display: flex;
+}
+
+.EncabezadoMenuMobile a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.EncabezadoMenuMobile a:hover,
+.EncabezadoMenuMobile a.active {
+  color: rgb(255, 111, 44);
+  text-decoration: underline;
+}
+
+/* Media queries para móviles */
+@media (max-width: 1000px) {
+  :root {
+    --EncabezadoHeight: 70px;
+  }
+
+  .Encabezado {
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
+
+  .EncabezadoImagenPrincipal {
+    width: 50px;
+  }
+
+  .EncabezadoLogo {
+    flex: 1;
+    order: 1;
+  }
+
+  .EncabezadoLogo h1 {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+
+  .EncabezadoBotonHamburguesa {
+    display: flex;
+    order: 2;
+  }
+
+  .EncabezadoLinks {
+    display: none;
+    order: 3;
+  }
+
+  .EncabezadoRegistro {
+    display: none;
+    order: 3;
+  }
+
+  .EncabezadoMenuMobile {
+    order: 4;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --EncabezadoHeight: 60px;
+  }
+
+  .Encabezado {
+    padding: 0.4rem;
+    min-height: 60px;
+  }
+
+  .EncabezadoImagenPrincipal {
+    width: 40px;
+  }
+
+  .EncabezadoLogo h1 {
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+  }
+
+  .EncabezadoBotonHamburguesa span {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  .EncabezadoMenuMobile {
+    padding: 0.8rem 0.5rem;
+    gap: 0.8rem;
+  }
+
+  .EncabezadoMenuMobile a {
+    font-size: 0.85rem;
+  }
 }
 
 .EncabezadoNombreUsuario{

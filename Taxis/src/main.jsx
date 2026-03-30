@@ -8,7 +8,6 @@ import PaginaPrincipal from './components/PaginaPrincipal.jsx';
 import InicioSesion from './components/InicioSecion.jsx';
 import Registro from './components/Registro.jsx';
 import ErrorPage from "./components/error-page.jsx";
-import Solicitar from './components/Solicitar.jsx';
 import AcercaDe from './components/AcercaDe.jsx';
 import Ayuda from './components/Ayuda.jsx';
 import Sugerencias from './components/Sugerencias.jsx';
@@ -36,13 +35,6 @@ const router = createBrowserRouter([
     element: 
     <div>
       <InicioSesion/>
-    </div>,
-  },
-  {
-    path: "/solicitar",
-    element: 
-    <div>
-      <Solicitar/>
     </div>,
   },
   {

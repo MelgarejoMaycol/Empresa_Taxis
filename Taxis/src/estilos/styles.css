@@ -25,7 +25,7 @@ body {
 /*lOGIN Y REGISTRO MAYCOL*/
 /*//////////////////////////////////////////////////////////////////////////*/
 .Login {
-  margin-top: 82px;
+  margin-top: var(--EncabezadoHeight, 90px);
 }
 
 .LoginPaginaCompleta {
@@ -78,7 +78,7 @@ body {
 
 /* Solicitudes//////////////////////////////////////////////////////////////////////////// */
 .Solicitar {
-  margin-top: 98px;
+  margin-top: var(--EncabezadoHeight, 90px);
 }
 
 .SolicitarContenedorTitulo p {
@@ -189,22 +189,32 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
+  min-height: 600px;
+  height: 600px;
+  margin-top: 6rem;
 }
 .imagenPrincipal{
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .ContenedorImagenPrincipal{
   width: 50%;
   padding-top: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .textoContainerPrincipal {
   display: flex;
   flex-direction: column;
   width: 50%;
-  justify-content: center;
-
+  justify-content: flex-start;
+  height: 100%;
+  padding: 4rem 2rem 2rem 2rem;
 }
 
 
@@ -216,8 +226,8 @@ body {
   font-style: normal;
   font-size: 40px;
   margin-left: 10rem;
-  height: 20%;
   margin-bottom: 1rem;
+  flex-shrink: 0;
   /* Añade un margen inferior para controlar la separación */
 }
 
@@ -227,6 +237,7 @@ body {
   margin-left: 10rem;
   font-size: 70px;
   line-height: 1;
+  flex-shrink: 0;
   /* Controla la altura de la línea para reducir espacio */
 }
 
@@ -238,20 +249,97 @@ body {
   font-style: normal;
   font-size: 20px;
   margin-left: 10rem;
-  height: 20%;
   margin-bottom: 1rem;
+  flex-shrink: 0;
   /* Añade un margen inferior para controlar la separación */
 }
 
 .BotonDescubrir {
   margin-left: 10rem;
   width: 8rem;
-
+  flex-shrink: 0;
 }
 
 .BotonDescubrir:hover {
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
+}
+
+/* Media queries - Imagen se reduce desde 1500px hacia abajo */
+@media (max-width: 1500px) {
+  .ContenedorImagenPrincipal {
+    width: 45%;
+  }
+  
+  .textoContainerPrincipal {
+    width: 55%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ContenedorImagenPrincipal {
+    width: 40%;
+  }
+  
+  .textoContainerPrincipal {
+    width: 60%;
+  }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 1000px) {
+  .inferiorPrincipal {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    margin-top: 6rem;
+  }
+  
+  .textoContainerPrincipal {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    justify-content: flex-start;
+  }
+  
+  .ContenedorImagenPrincipal {
+    display: none;
+  }
+  
+  .primeTexto {
+    margin-left: 2rem;
+    font-size: 28px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .segundoTexto {
+    margin-left: 2rem;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .tercerTexto {
+    margin-left: 2rem;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .BotonDescubrir {
+    margin-left: 2rem;
+  }
+  
+  .segundoTexto {
+    font-size: 50px;
+  }
+  
+  .primeTexto {
+    font-size: 30px;
+  }
+  
+  .tercerTexto {
+    font-size: 16px;
+  }
 }
 
 

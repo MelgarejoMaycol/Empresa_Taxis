@@ -38,13 +38,10 @@ function App() {
             </div>
 
             <div className="encap1_1">
-              <i className="bi bi-taxi-front"></i>
-              <h3>como ordenar el servicio de taxis</h3>
-              <p>al ordenar un servicio de taxis es muy facil solo tienes que ingresra tu direccion actual, sino sabes bien la direccion
-                te puedes aydar con el mapa solo dado click en el icono de ubicacion y el mismo procedimiento es con el destino final donde nuestros
-                taxistas los llevara con exito
-              </p>
-              <a href="/solicitar">solicitar taxi</a>
+              <i className="bi bi-telephone-fill"></i>
+              <h3>contactanos</h3>
+              <p>Si necesitas solicitar nuestro servicio de taxis o tienes alguna pregunta, no dudes en contactarnos directamente a través de nuestros medios de comunicación. Nuestro equipo está disponible para atenderte.</p>
+              <a href="tel:+573224543587">Llamar ahora</a>
             </div>
           </div>
         </article>

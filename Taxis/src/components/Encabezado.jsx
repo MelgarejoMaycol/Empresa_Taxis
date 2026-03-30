@@ -13,6 +13,7 @@ const Encabezado = () => {
     // Estado local para almacenar la lista de usuarios y el estado del modal de cierre de sesión
     const [usuarios, setUsuarios] = useState([]);
     const [cerrarSesion, setCerrarSesion] = useState(false);
+    const [menuMobileActivo, setMenuMobileActivo] = useState(false);
 
     // Contexto de usuario para acceder al estado del usuario autenticado
     const { user } = useContext(UserContext);
@@ -51,6 +52,11 @@ const Encabezado = () => {
         return location.pathname === path ? 'active' : '';
     };
 
+    // Función para cerrar el menú móvil cuando se hace clic en un enlace
+    const cerrarMenuMobile = () => {
+        setMenuMobileActivo(false);
+    };
+
     // Efecto para cargar la lista de usuarios desde Firestore cuando se monta el componente
     useEffect(() => {
         const obtenerUsuarios = async () => {
@@ -70,14 +76,26 @@ const Encabezado = () => {
                 <img className="EncabezadoImagenPrincipal" src={logoEncabezado} />
                 <h1>TRANSPORTES O'CLOK S.A.S</h1>
             </div>
-            {/* Sección de enlaces de navegación */}
+            
+            {/* Botón hamburguesa para menú móvil */}
+            <button 
+                className={`EncabezadoBotonHamburguesa ${menuMobileActivo ? 'activo' : ''}`}
+                onClick={() => setMenuMobileActivo(!menuMobileActivo)}
+                aria-label="Toggle menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            {/* Sección de enlaces de navegación (desktop) */}
             <div className="subtitulos EncabezadoLinks EncabezadoParte">
                 <a href="/" className={getLinkClass('/')}>INICIO</a>
                 <a href="/acercaDe" className={getLinkClass('/acercaDe')}>ACERCA DE</a>
-                <a href="/solicitar" className={getLinkClass('/solicitar')}>SOLICITAR</a>
                 <a href="/Ayuda" className={getLinkClass('/Ayuda')}>AYUDA</a>
             </div>
-            {/* Sección de inicio de sesión y registro */}
+            
+            {/* Sección de inicio de sesión y registro (desktop) */}
             <div className="subtitulos EncabezadoRegistro EncabezadoParte m-auto text-center">
                 {/* Si el usuario está autenticado, muestra su correo electrónico y el botón para abrir el modal de cierre de sesión */}
                 {user ? (
@@ -91,6 +109,28 @@ const Encabezado = () => {
                     </>
                 )}
             </div>
+            
+            {/* Menú móvil */}
+            <div className={`EncabezadoMenuMobile ${menuMobileActivo ? 'activo' : ''}`}>
+                <a href="/" className={getLinkClass('/')} onClick={cerrarMenuMobile}>INICIO</a>
+                <a href="/acercaDe" className={getLinkClass('/acercaDe')} onClick={cerrarMenuMobile}>ACERCA DE</a>
+                <a href="/Ayuda" className={getLinkClass('/Ayuda')} onClick={cerrarMenuMobile}>AYUDA</a>
+                
+                {/* Sección de usuario en móvil */}
+                <div style={{ borderTop: '1px solid #ccc', paddingTop: '1rem', marginTop: '1rem' }}>
+                    {user ? (
+                        <div onClick={() => { openModal(user); cerrarMenuMobile(); }}>
+                            <p className="EncabezadoNombreUsuario" style={{ margin: '0.5rem 0', cursor: 'pointer' }}>{user.email}</p>
+                        </div>
+                    ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                            <a className={`EncabezadoInicioSesion ${getLinkClass('/iniciarSesion')}`} href="/iniciarSesion" onClick={cerrarMenuMobile} style={{ textAlign: 'center' }}>INICIAR SESION</a>
+                            <a className={`BotonGeneral EncabezadoBotonRegistrarme ${getLinkClass('/Registro')}`} href='/Registro' onClick={cerrarMenuMobile} style={{ textAlign: 'center' }}>REGISTRARME</a>
+                        </div>
+                    )}
+                </div>
+            </div>
+            
             {/* Modal para confirmar el cierre de sesión */}
             <Modal
                 isOpen={cerrarSesion}

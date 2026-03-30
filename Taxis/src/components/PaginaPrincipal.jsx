@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Encabezado from "./Encabezado";
-import Solicitar from "./Solicitar";
 import AcercaDe from "./AcercaDe";
 import Sugerencias from "./Sugerencias";
 import Ayuda from "./Ayuda";
@@ -27,13 +26,11 @@ const PaginaPrincipal = () => {
           <p className="subtitulos tercerTexto ">
             Descubre nuestros servicios, lo que tu puedes lograr con ellos y como tenemos tu participación en cuenta.
           </p>
-          <a className='BotonGeneral subtitulos BotonDescubrir' href="solicitar">DESCUBRIR</a>
         </div>
         <div className="ContenedorImagenPrincipal">
           <AnimatedImagen src={imagenPrincipal} />
         </div>
       </div>
-      <Solicitar />
       <AcercaDe />
       <Ayuda/>
     </div>
