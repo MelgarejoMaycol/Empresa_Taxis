@@ -91,7 +91,7 @@ const Encabezado = () => {
             {/* Sección de enlaces de navegación (desktop) */}
             <div className="subtitulos EncabezadoLinks EncabezadoParte">
                 <a href="/" className={getLinkClass('/')}>INICIO</a>
-                <a href="/acercaDe" className={getLinkClass('/acercaDe')}>ACERCA DE</a>
+                <a href="/AcercaDe" className={getLinkClass('/AcercaDe')}>ACERCA DE</a>
                 <a href="/Ayuda" className={getLinkClass('/Ayuda')}>AYUDA</a>
             </div>
             
@@ -104,7 +104,7 @@ const Encabezado = () => {
                     </div>
                 ) : (
                     <>
-                        <a className={`EncabezadoInicioSesion ${getLinkClass('/iniciarSesion')}`} href="/iniciarSesion">INICIAR SESION</a>
+                        <a className={`EncabezadoInicioSesion ${getLinkClass('/IniciarSesion')}`} href="/IniciarSesion">INICIAR SESION</a>
                         <a className={`BotonGeneral EncabezadoBotonRegistrarme ${getLinkClass('/Registro')}`} href='/Registro'>REGISTRARME</a>
                     </>
                 )}
@@ -113,7 +113,7 @@ const Encabezado = () => {
             {/* Menú móvil */}
             <div className={`EncabezadoMenuMobile ${menuMobileActivo ? 'activo' : ''}`}>
                 <a href="/" className={getLinkClass('/')} onClick={cerrarMenuMobile}>INICIO</a>
-                <a href="/acercaDe" className={getLinkClass('/acercaDe')} onClick={cerrarMenuMobile}>ACERCA DE</a>
+                <a href="/AcercaDe" className={getLinkClass('/AcercaDe')} onClick={cerrarMenuMobile}>ACERCA DE</a>
                 <a href="/Ayuda" className={getLinkClass('/Ayuda')} onClick={cerrarMenuMobile}>AYUDA</a>
                 
                 {/* Sección de usuario en móvil */}
@@ -124,7 +124,7 @@ const Encabezado = () => {
                         </div>
                     ) : (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <a className={`EncabezadoInicioSesion ${getLinkClass('/iniciarSesion')}`} href="/iniciarSesion" onClick={cerrarMenuMobile} style={{ textAlign: 'center' }}>INICIAR SESION</a>
+                            <a className={`EncabezadoInicioSesion ${getLinkClass('/IniciarSesion')}`} href="/IniciarSesion" onClick={cerrarMenuMobile} style={{ textAlign: 'center' }}>INICIAR SESION</a>
                             <a className={`BotonGeneral EncabezadoBotonRegistrarme ${getLinkClass('/Registro')}`} href='/Registro' onClick={cerrarMenuMobile} style={{ textAlign: 'center' }}>REGISTRARME</a>
                         </div>
                     )}

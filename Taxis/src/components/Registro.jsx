@@ -231,7 +231,7 @@ const Registro = () => {
                 </div>
                 <div className="LoginEnlacesContenedor">
                     {/* Enlace para redirigir al usuario a la página de inicio de sesión */}
-                    <a className="text-center text-decoration-none LoginEnlace" href="/iniciarSesion">¿Ya tienes cuenta? Iniciar sesión</a>
+                    <a className="text-center text-decoration-none LoginEnlace" href="/IniciarSesion">¿Ya tienes cuenta? Iniciar sesión</a>
                 </div>
             </div>
             {/* Componente de Pie de Página */}
