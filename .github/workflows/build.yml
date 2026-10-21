@@ -24,7 +24,12 @@ jobs:
           cache-dependency-path: ./Taxis/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        working-directory: Taxis
+        run: |
+          pwd
+          test -f package-lock.json
+          npm ci
 
       - name: Build
+        working-directory: Taxis
         run: npm run build
