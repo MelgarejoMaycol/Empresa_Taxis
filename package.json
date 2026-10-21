@@ -7,8 +7,5 @@
     "dev": "cd Taxis && npm run dev",
     "preview": "cd Taxis && npm run preview",
     "lint": "cd Taxis && npm run lint"
-  },
-  "workspaces": [
-    "Taxis"
-  ]
+  }
 }
